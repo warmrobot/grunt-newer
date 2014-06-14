@@ -93,7 +93,7 @@ function createTask(grunt) {
     }
 
     var files = grunt.task.normalizeMultiTaskFiles(config, targetName);
-    util.filterFilesByTime(files, previous, override, function(e, newerFiles) {
+    util.filterFilesByTime(files, previous, override, config, function(e, newerFiles) {
       if (e) {
         return done(e);
       } else if (newerFiles.length === 0) {
